@@ -128,7 +128,7 @@ SMTP_SECURE=false
 SMTP_USER=
 SMTP_PASS=
 MAIL_FROM=
-MAIL_TO=info@onlineseoportal.com
+MAIL_TO=
 ```
 
 ### Notes
