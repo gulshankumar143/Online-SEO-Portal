@@ -139,42 +139,6 @@ MAIL_TO=
 - `MAIL_FROM` can be left empty to use the authenticated SMTP user.
 - Do not commit `.env` or expose SMTP credentials in source control.
 
-## API Reference
-
-### Health check
-
-```http
-GET /api/health
-```
-
-Returns the current health status of the service and MongoDB connectivity.
-
-### Service list
-
-```http
-GET /api/services
-```
-
-Returns the service catalog and consultation choices used by the frontend.
-
-### Contact submission
-
-```http
-POST /api/contact
-Content-Type: application/json
-```
-
-Request body example:
-
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+91 98765 43210",
-  "service": "SEO Services",
-  "message": "I would like to improve my website rankings and monthly traffic."
-}
-```
 
 Accepted fields:
 
@@ -204,25 +168,3 @@ Collection: `inquiries`
 ```
 
 Validation rules are enforced before insertion, including checks for required fields, email format, and length constraints.
-
-## Security
-
-The backend applies security headers to responses and enforces CORS restrictions. Static assets are served through the backend layer, and the application expects environment-based configuration rather than hardcoded secrets.
-
-## Development
-
-Run the test suite with:
-
-```bash
-npm test
-```
-
-The project includes automated Node.js tests for server and email-related functionality.
-
-## License
-
-This project is distributed for internal business use and is not currently tied to a public license declaration.
-
-## Support
-
-For production deployment or advanced configuration changes, verify your MongoDB and SMTP settings before going live and keep environment variables managed securely in the deployment platform of your choice.
